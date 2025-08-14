@@ -173,13 +173,13 @@
                     <input type="text" name="bot-field" tabindex="-1" autocomplete="off">
                 </div>
 
-                <!-- Hidden fields for Netlify to detect -->
+                <!-- Static form fields for Netlify to detect (hidden) -->
                 <div class="hidden">
-                    <input type="text" name="fullName">
-                    <input type="number" name="age">
-                    <input type="email" name="email">
-                    <input type="tel" name="phone">
-                    <input type="text" name="city">
+                    <input type="text" name="fullName" value="">
+                    <input type="number" name="age" value="">
+                    <input type="email" name="email" value="">
+                    <input type="tel" name="phone" value="">
+                    <input type="text" name="city" value="">
                     <input type="radio" name="selectedDay" value="day1">
                     <input type="radio" name="selectedDay" value="day2">
                     <input type="checkbox" name="activities" value="kimbap">
@@ -187,9 +187,9 @@
                     <input type="checkbox" name="activities" value="makeup">
                     <input type="checkbox" name="activities" value="squid">
                     <textarea name="dietary"></textarea>
-                    <input type="text" name="emergencyName">
-                    <input type="tel" name="emergencyPhone">
-                    <input type="text" name="emergencyRelation">
+                    <input type="text" name="emergencyName" value="">
+                    <input type="tel" name="emergencyPhone" value="">
+                    <input type="text" name="emergencyRelation" value="">
                     <input type="radio" name="mediaConsent" value="yes">
                     <input type="radio" name="mediaConsent" value="no">
                     <input type="checkbox" name="waiverAgreement">
@@ -971,9 +971,76 @@
             submitBtn.disabled = true;
             spinner.classList.remove('hidden');
             
+            // Sync form data to hidden fields for Netlify
+            syncFormDataToHiddenFields();
+            
             // Let the form submit to Netlify
             // The success modal will be shown after successful submission
         });
+
+        // Function to sync dynamic form data to hidden fields
+        function syncFormDataToHiddenFields() {
+            // Sync personal info
+            if (formData.fullName) {
+                document.querySelector('input[name="fullName"]').value = formData.fullName;
+            }
+            if (formData.age) {
+                document.querySelector('input[name="age"]').value = formData.age;
+            }
+            if (formData.email) {
+                document.querySelector('input[name="email"]').value = formData.email;
+            }
+            if (formData.phone) {
+                document.querySelector('input[name="phone"]').value = formData.phone;
+            }
+            if (formData.city) {
+                document.querySelector('input[name="city"]').value = formData.city;
+            }
+            
+            // Sync selected day
+            if (selectedDay) {
+                const dayRadio = document.querySelector(`input[name="selectedDay"][value="${selectedDay}"]`);
+                if (dayRadio) dayRadio.checked = true;
+            }
+            
+            // Sync activities
+            if (formData.activities) {
+                formData.activities.forEach(activity => {
+                    const activityCheckbox = document.querySelector(`input[name="activities"][value="${activity}"]`);
+                    if (activityCheckbox) activityCheckbox.checked = true;
+                });
+            }
+            
+            // Sync emergency contact
+            if (formData.emergencyName) {
+                document.querySelector('input[name="emergencyName"]').value = formData.emergencyName;
+            }
+            if (formData.emergencyPhone) {
+                document.querySelector('input[name="emergencyPhone"]').value = formData.emergencyPhone;
+            }
+            if (formData.emergencyRelation) {
+                document.querySelector('input[name="emergencyRelation"]').value = formData.emergencyRelation;
+            }
+            
+            // Sync media consent
+            if (formData.mediaConsent) {
+                const consentRadio = document.querySelector(`input[name="mediaConsent"][value="${formData.mediaConsent}"]`);
+                if (consentRadio) consentRadio.checked = true;
+            }
+            
+            // Sync waiver agreement
+            if (formData.waiverAgreement) {
+                document.querySelector('input[name="waiverAgreement"]').checked = true;
+            }
+            
+            // Sync dietary and comments
+            if (formData.dietary) {
+                document.querySelector('textarea[name="dietary"]').value = formData.dietary;
+            }
+            if (formData.comments) {
+                document.querySelector('textarea[name="comments"]').value = formData.comments;
+            }
+        }
     </script>
 </body>
 </html>
