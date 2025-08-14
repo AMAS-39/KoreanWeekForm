@@ -110,30 +110,30 @@
             <!-- Progress Stepper -->
             <div class="mb-12">
                 <div class="flex items-center justify-center space-x-4">
-                    <div class="flex items-center">
-                        <div class="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">1</div>
-                        <span class="ml-2 text-sm font-medium">Personal</span>
-                    </div>
-                    <div class="w-8 h-1 bg-gray-300"></div>
-                    <div class="flex items-center">
-                        <div class="bg-gray-300 text-gray-600 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">2</div>
-                        <span class="ml-2 text-sm font-medium">Day</span>
-                    </div>
-                    <div class="w-8 h-1 bg-gray-300"></div>
-                    <div class="flex items-center">
-                        <div class="bg-gray-300 text-gray-600 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">3</div>
-                        <span class="ml-2 text-sm font-medium">Activities</span>
-                    </div>
-                    <div class="w-8 h-1 bg-gray-300"></div>
-                    <div class="flex items-center">
-                        <div class="bg-gray-300 text-gray-600 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">4</div>
-                        <span class="ml-2 text-sm font-medium">Details</span>
-                    </div>
-                    <div class="w-8 h-1 bg-gray-300"></div>
-                    <div class="flex items-center">
-                        <div class="bg-gray-300 text-gray-600 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">5</div>
-                        <span class="ml-2 text-sm font-medium">Review</span>
-                    </div>
+                                         <div class="flex items-center">
+                         <div class="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold" id="step-1">1</div>
+                         <span class="ml-2 text-sm font-medium" id="text-1">Personal</span>
+                     </div>
+                                         <div class="w-8 h-1 bg-gray-300" id="line-1"></div>
+                     <div class="flex items-center">
+                         <div class="bg-gray-300 text-gray-600 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold" id="step-2">2</div>
+                         <span class="ml-2 text-sm font-medium" id="text-2">Day</span>
+                     </div>
+                     <div class="w-8 h-1 bg-gray-300" id="line-2"></div>
+                     <div class="flex items-center">
+                         <div class="bg-gray-300 text-gray-600 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold" id="step-3">3</div>
+                         <span class="ml-2 text-sm font-medium" id="text-3">Activities</span>
+                     </div>
+                     <div class="w-8 h-1 bg-gray-300" id="line-3"></div>
+                     <div class="flex items-center">
+                         <div class="bg-gray-300 text-gray-600 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold" id="step-4">4</div>
+                         <span class="ml-2 text-sm font-medium" id="text-4">Details</span>
+                     </div>
+                     <div class="w-8 h-1 bg-gray-300" id="line-4"></div>
+                     <div class="flex items-center">
+                         <div class="bg-gray-300 text-gray-600 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold" id="step-5">5</div>
+                         <span class="ml-2 text-sm font-medium" id="text-5">Review</span>
+                     </div>
                 </div>
             </div>
 
@@ -227,19 +227,37 @@
         }
 
         function updateProgressStepper(step) {
-            const steps = document.querySelectorAll('.flex.items-center');
-            steps.forEach((stepEl, index) => {
-                const numberEl = stepEl.querySelector('div');
-                const textEl = stepEl.querySelector('span');
+            // Update step circles and text
+            for (let i = 1; i <= 5; i++) {
+                const stepEl = document.getElementById(`step-${i}`);
+                const textEl = document.getElementById(`text-${i}`);
                 
-                if (index + 1 <= step) {
-                    numberEl.className = 'bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold';
+                if (i === step) {
+                    // Current step - red
+                    stepEl.className = 'bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold';
                     textEl.className = 'ml-2 text-sm font-medium text-red-600';
+                } else if (i < step) {
+                    // Completed steps - green
+                    stepEl.className = 'bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold';
+                    textEl.className = 'ml-2 text-sm font-medium text-green-600';
                 } else {
-                    numberEl.className = 'bg-gray-300 text-gray-600 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold';
+                    // Future steps - gray
+                    stepEl.className = 'bg-gray-300 text-gray-600 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold';
                     textEl.className = 'ml-2 text-sm font-medium text-gray-500';
                 }
-            });
+            }
+            
+            // Update connecting lines
+            for (let i = 1; i <= 4; i++) {
+                const lineEl = document.getElementById(`line-${i}`);
+                if (i < step) {
+                    // Completed lines - green
+                    lineEl.className = 'w-8 h-1 bg-green-600';
+                } else {
+                    // Future lines - gray
+                    lineEl.className = 'w-8 h-1 bg-gray-300';
+                }
+            }
         }
 
         function nextStep() {
@@ -447,108 +465,65 @@
                     </div>
                     
                     <div class="space-y-4">
-                        <div class="border border-gray-200 rounded-lg p-4">
-                            <label class="flex items-start space-x-4 cursor-pointer">
-                                <input 
-                                    type="checkbox" 
-                                    name="activities" 
-                                    value="kimbap" 
-                                    class="mt-1 text-red-600 focus:ring-red-500"
-                                >
-                                <div class="flex-1">
-                                    <div class="flex items-center justify-between">
-                                        <div>
-                                            <div class="font-semibold text-lg text-gray-900">Kimbap-making class</div>
-                                            <div class="text-gray-600 mt-1">Learn to make traditional Korean rice rolls</div>
-                                        </div>
-                                        <div class="text-sm bg-green-100 text-green-800 px-2 py-1 rounded-full">
-                                            ${dayActivities.kimbap}/30 left
-                                        </div>
-                                    </div>
-                                </div>
-                            </label>
-                        </div>
-                        
-                        <div class="border border-gray-200 rounded-lg p-4">
-                            <label class="flex items-start space-x-4 cursor-pointer">
-                                <input 
-                                    type="checkbox" 
-                                    name="activities" 
-                                    value="taekwondo" 
-                                    class="mt-1 text-red-600 focus:ring-red-500"
-                                >
-                                <div class="flex-1">
-                                    <div class="flex items-center justify-between">
-                                        <div>
-                                            <div class="font-semibold text-lg text-gray-900">Taekwondo</div>
-                                            <div class="text-gray-600 mt-1">Experience Korean martial arts</div>
-                                        </div>
-                                        <div class="text-sm bg-green-100 text-green-800 px-2 py-1 rounded-full">
-                                            ${dayActivities.taekwondo}/25 left
-                                        </div>
-                                    </div>
-                                </div>
-                            </label>
-                        </div>
-                        
-                        <div class="border border-gray-200 rounded-lg p-4">
-                            <label class="flex items-start space-x-4 cursor-pointer">
-                                <input 
-                                    type="checkbox" 
-                                    name="activities" 
-                                    value="makeup" 
-                                    class="mt-1 text-red-600 focus:ring-red-500"
-                                >
-                                <div class="flex-1">
-                                    <div class="flex items-center justify-between">
-                                        <div>
-                                            <div class="font-semibold text-lg text-gray-900">Korean make-up session</div>
-                                            <div class="text-gray-600 mt-1">Learn Korean beauty techniques</div>
-                                        </div>
-                                        <div class="text-sm bg-green-100 text-green-800 px-2 py-1 rounded-full">
-                                            ${dayActivities.makeup}/20 left
-                                        </div>
-                                    </div>
-                                </div>
-                            </label>
-                        </div>
-                        
-                        <div class="border border-gray-200 rounded-lg p-4">
-                            <label class="flex items-start space-x-4 cursor-pointer">
-                                <input 
-                                    type="checkbox" 
-                                    name="activities" 
-                                    value="squid" 
-                                    class="mt-1 text-red-600 focus:ring-red-500"
-                                >
-                                <div class="flex-1">
-                                    <div class="flex items-center justify-between">
-                                        <div>
-                                            <div class="font-semibold text-lg text-gray-900">Squid Game challenge</div>
-                                            <div class="text-gray-600 mt-1">Fun games inspired by the popular series</div>
-                                        </div>
-                                        <div class="text-sm bg-green-100 text-green-800 px-2 py-1 rounded-full">
-                                            ${dayActivities.squid}/40 left
-                                        </div>
-                                    </div>
-                                </div>
-                            </label>
-                        </div>
-                        
-                        <div class="border border-gray-200 rounded-lg p-4">
-                            <label class="flex items-start space-x-4 cursor-pointer">
-                                <input 
-                                    type="checkbox" 
-                                    name="activities" 
-                                    value="all" 
-                                    class="mt-1 text-red-600 focus:ring-red-500"
-                                >
-                                <div class="flex-1">
-                                    <div class="font-semibold text-lg text-gray-900">All of the above</div>
-                                    <div class="text-gray-600 mt-1">Join all available activities</div>
-                                </div>
-                            </label>
-                        </div>
+                                                 <div class="border border-gray-200 rounded-lg p-4">
+                             <label class="flex items-start space-x-4 cursor-pointer">
+                                 <input 
+                                     type="checkbox" 
+                                     name="activities" 
+                                     value="kimbap" 
+                                     class="mt-1 text-red-600 focus:ring-red-500"
+                                 >
+                                 <div class="flex-1">
+                                     <div class="font-semibold text-lg text-gray-900">Kimbap-making class</div>
+                                     <div class="text-gray-600 mt-1">Learn to make traditional Korean rice rolls</div>
+                                 </div>
+                             </label>
+                         </div>
+                         
+                         <div class="border border-gray-200 rounded-lg p-4">
+                             <label class="flex items-start space-x-4 cursor-pointer">
+                                 <input 
+                                     type="checkbox" 
+                                     name="activities" 
+                                     value="taekwondo" 
+                                     class="mt-1 text-red-600 focus:ring-red-500"
+                                 >
+                                 <div class="flex-1">
+                                     <div class="font-semibold text-lg text-gray-900">Taekwondo</div>
+                                     <div class="text-gray-600 mt-1">Experience Korean martial arts</div>
+                                 </div>
+                             </label>
+                         </div>
+                         
+                         <div class="border border-gray-200 rounded-lg p-4">
+                             <label class="flex items-start space-x-4 cursor-pointer">
+                                 <input 
+                                     type="checkbox" 
+                                     name="activities" 
+                                     value="makeup" 
+                                     class="mt-1 text-red-600 focus:ring-red-500"
+                                 >
+                                 <div class="flex-1">
+                                     <div class="font-semibold text-lg text-gray-900">Korean make-up session</div>
+                                     <div class="text-gray-600 mt-1">Learn Korean beauty techniques</div>
+                                 </div>
+                             </label>
+                         </div>
+                         
+                         <div class="border border-gray-200 rounded-lg p-4">
+                             <label class="flex items-start space-x-4 cursor-pointer">
+                                 <input 
+                                     type="checkbox" 
+                                     name="activities" 
+                                     value="squid" 
+                                     class="mt-1 text-red-600 focus:ring-red-500"
+                                 >
+                                 <div class="flex-1">
+                                     <div class="font-semibold text-lg text-gray-900">Squid Game challenge</div>
+                                     <div class="text-gray-600 mt-1">Fun games inspired by the popular series</div>
+                                 </div>
+                             </label>
+                         </div>
                     </div>
                     
                     <div class="flex justify-between pt-6">
