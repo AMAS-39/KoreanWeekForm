@@ -941,8 +941,6 @@
 
         // Form submission
         document.getElementById('korea-week-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
             const submitBtn = document.getElementById('submit-btn');
             const spinner = document.getElementById('submit-spinner');
             
@@ -950,12 +948,8 @@
             submitBtn.disabled = true;
             spinner.classList.remove('hidden');
             
-            // Simulate form submission (replace with actual endpoint)
-            setTimeout(() => {
-                showSuccessModal();
-                submitBtn.disabled = false;
-                spinner.classList.add('hidden');
-            }, 2000);
+            // Let the form submit to Netlify
+            // The success modal will be shown after successful submission
         });
     </script>
 </body>
