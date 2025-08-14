@@ -48,14 +48,29 @@
         
         <!-- Hero Content -->
         <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-            <!-- Korean Flag Icon -->
-            <div class="mb-4">
-                <div class="inline-flex items-center justify-center w-16 h-16 bg-white rounded-full shadow-lg">
-                    <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
-                        <div class="w-8 h-8 bg-blue-600 rounded-full"></div>
-                    </div>
-                </div>
-            </div>
+                         <!-- Korean Cultural Elements -->
+             <div class="mb-6">
+                 <!-- Korean Flag Icon -->
+                 <div class="inline-flex items-center justify-center w-16 h-16 bg-white rounded-full shadow-lg mb-4">
+                     <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
+                         <div class="w-8 h-8 bg-blue-600 rounded-full"></div>
+                     </div>
+                 </div>
+                 
+                 <!-- Korean Text -->
+                 <div class="text-center mb-4">
+                     <div class="text-2xl font-bold text-yellow-400 mb-2">한국 주간</div>
+                     <div class="text-lg text-yellow-300">Korean Week</div>
+                 </div>
+                 
+                 <!-- Korean Cultural Icons -->
+                 <div class="flex justify-center space-x-6 mb-4">
+                     <div class="text-yellow-400 text-2xl">🎎</div>
+                     <div class="text-yellow-400 text-2xl">🍜</div>
+                     <div class="text-yellow-400 text-2xl">🥋</div>
+                     <div class="text-yellow-400 text-2xl">🎭</div>
+                 </div>
+             </div>
             <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
                 Korea Week Registration
             </h1>
@@ -107,9 +122,21 @@
     <!-- Registration Form -->
     <section id="registration-form" class="py-16 px-4">
         <div class="max-w-3xl mx-auto">
-            <!-- Progress Stepper -->
-            <div class="mb-12">
-                <div class="flex items-center justify-center space-x-4">
+                         <!-- Korean Cultural Header -->
+             <div class="text-center mb-8">
+                 <div class="flex justify-center space-x-4 mb-4">
+                     <div class="text-red-600 text-2xl">🇰🇷</div>
+                     <div class="text-red-600 text-2xl">🎎</div>
+                     <div class="text-red-600 text-2xl">🍜</div>
+                     <div class="text-red-600 text-2xl">🥋</div>
+                 </div>
+                 <h2 class="text-3xl font-bold text-gray-900 mb-2">한국 주간 등록</h2>
+                 <p class="text-gray-600">Korean Week Registration</p>
+             </div>
+             
+             <!-- Progress Stepper -->
+             <div class="mb-12">
+                 <div class="flex items-center justify-center space-x-4">
                                          <div class="flex items-center">
                          <div class="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold" id="step-1">1</div>
                          <span class="ml-2 text-sm font-medium" id="text-1">Personal</span>
@@ -156,12 +183,18 @@
 
     <!-- Success Modal -->
     <div id="success-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
-        <div class="bg-white rounded-2xl p-8 max-w-md mx-4 text-center">
-            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-            </div>
+                 <div class="bg-white rounded-2xl p-8 max-w-md mx-4 text-center">
+             <!-- Korean Success Icons -->
+             <div class="flex justify-center space-x-4 mb-4">
+                 <div class="text-2xl">🇰🇷</div>
+                 <div class="text-2xl">✅</div>
+                 <div class="text-2xl">🎎</div>
+             </div>
+             <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                 <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                 </svg>
+             </div>
                          <h3 class="text-2xl font-bold text-gray-900 mb-2">Registration Successful!</h3>
              <p class="text-gray-600 mb-6">
                  Thank you for registering for Korea Week! We've received your application and will send you a confirmation email shortly.
@@ -306,10 +339,14 @@
         function getPersonalInfoSection() {
             return `
                 <div class="space-y-6">
-                    <div class="text-center mb-8">
-                        <h2 class="text-3xl font-bold text-gray-900 mb-2">Personal Information</h2>
-                        <p class="text-gray-600">Please provide your basic details to get started</p>
-                    </div>
+                                         <div class="text-center mb-8">
+                         <div class="flex justify-center space-x-3 mb-4">
+                             <div class="text-red-600 text-xl">👤</div>
+                             <div class="text-red-600 text-xl">🇰🇷</div>
+                         </div>
+                         <h2 class="text-3xl font-bold text-gray-900 mb-2">Personal Information</h2>
+                         <p class="text-gray-600">Please provide your basic details to get started</p>
+                     </div>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
@@ -405,10 +442,14 @@
         function getDaySelectionSection() {
             return `
                 <div class="space-y-6">
-                    <div class="text-center mb-8">
-                        <h2 class="text-3xl font-bold text-gray-900 mb-2">Choose Your Day</h2>
-                        <p class="text-gray-600">Select which day you'd like to attend Korea Week</p>
-                    </div>
+                                         <div class="text-center mb-8">
+                         <div class="flex justify-center space-x-3 mb-4">
+                             <div class="text-red-600 text-xl">📅</div>
+                             <div class="text-red-600 text-xl">🇰🇷</div>
+                         </div>
+                         <h2 class="text-3xl font-bold text-gray-900 mb-2">Choose Your Day</h2>
+                         <p class="text-gray-600">Select which day you'd like to attend Korea Week</p>
+                     </div>
                     
                     <div class="space-y-4">
                         <div class="border border-gray-200 rounded-lg p-6 hover:border-red-300 transition-colors">
@@ -474,10 +515,14 @@
 
             return `
                 <div class="space-y-6">
-                    <div class="text-center mb-8">
-                        <h2 class="text-3xl font-bold text-gray-900 mb-2">Activity Selection</h2>
-                        <p class="text-gray-600">Choose which activities you'd like to join on ${dayName}</p>
-                    </div>
+                                         <div class="text-center mb-8">
+                         <div class="flex justify-center space-x-3 mb-4">
+                             <div class="text-red-600 text-xl">🎯</div>
+                             <div class="text-red-600 text-xl">🇰🇷</div>
+                         </div>
+                         <h2 class="text-3xl font-bold text-gray-900 mb-2">Activity Selection</h2>
+                         <p class="text-gray-600">Choose which activities you'd like to join on ${dayName}</p>
+                     </div>
                     
                     <div class="space-y-4">
                                                  <div class="border border-gray-200 rounded-lg p-4">
@@ -564,10 +609,14 @@
         function getDetailsSection() {
             return `
                 <div class="space-y-6">
-                    <div class="text-center mb-8">
-                        <h2 class="text-3xl font-bold text-gray-900 mb-2">Additional Details</h2>
-                        <p class="text-gray-600">Help us prepare for your visit</p>
-                    </div>
+                                         <div class="text-center mb-8">
+                         <div class="flex justify-center space-x-3 mb-4">
+                             <div class="text-red-600 text-xl">📝</div>
+                             <div class="text-red-600 text-xl">🇰🇷</div>
+                         </div>
+                         <h2 class="text-3xl font-bold text-gray-900 mb-2">Additional Details</h2>
+                         <p class="text-gray-600">Help us prepare for your visit</p>
+                     </div>
                     
                     <div class="space-y-6">
                         <div>
@@ -700,10 +749,14 @@
         function getReviewSection() {
             return `
                 <div class="space-y-6">
-                    <div class="text-center mb-8">
-                        <h2 class="text-3xl font-bold text-gray-900 mb-2">Review Your Registration</h2>
-                        <p class="text-gray-600">Please review your information before submitting</p>
-                    </div>
+                                         <div class="text-center mb-8">
+                         <div class="flex justify-center space-x-3 mb-4">
+                             <div class="text-red-600 text-xl">👀</div>
+                             <div class="text-red-600 text-xl">🇰🇷</div>
+                         </div>
+                         <h2 class="text-3xl font-bold text-gray-900 mb-2">Review Your Registration</h2>
+                         <p class="text-gray-600">Please review your information before submitting</p>
+                     </div>
                     
                     <div class="bg-gray-50 rounded-lg p-6 space-y-4">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
