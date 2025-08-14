@@ -46,10 +46,19 @@
         <!-- Dark Overlay -->
         <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80"></div>
         
-        <!-- Hero Content -->
-        <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-                         <!-- Korean Cultural Elements -->
-             <div class="mb-6">
+                 <!-- Language Switcher -->
+         <div class="absolute top-4 right-4 z-20">
+             <div class="flex space-x-2">
+                 <button onclick="changeLanguage('en')" class="language-btn bg-white bg-opacity-20 hover:bg-opacity-30 text-white px-3 py-1 rounded-lg text-sm font-medium transition-all" id="lang-en">EN</button>
+                 <button onclick="changeLanguage('ku')" class="language-btn bg-white bg-opacity-10 hover:bg-opacity-30 text-white px-3 py-1 rounded-lg text-sm font-medium transition-all" id="lang-ku">کوردی</button>
+                 <button onclick="changeLanguage('ko')" class="language-btn bg-white bg-opacity-10 hover:bg-opacity-30 text-white px-3 py-1 rounded-lg text-sm font-medium transition-all" id="lang-ko">한국어</button>
+             </div>
+         </div>
+         
+         <!-- Hero Content -->
+         <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+                          <!-- Korean Cultural Elements -->
+              <div class="mb-6">
                  <!-- Korean Flag Icon -->
                  <div class="inline-flex items-center justify-center w-16 h-16 bg-white rounded-full shadow-lg mb-4">
                      <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
@@ -57,11 +66,11 @@
                      </div>
                  </div>
                  
-                 <!-- Korean Text -->
-                 <div class="text-center mb-4">
-                     <div class="text-2xl font-bold text-yellow-400 mb-2">한국 주간</div>
-                     <div class="text-lg text-yellow-300">Korean Week</div>
-                 </div>
+                                   <!-- Korean Text -->
+                  <div class="text-center mb-4">
+                      <div class="text-2xl font-bold text-yellow-400 mb-2" id="korean-week-text">한국 주간</div>
+                      <div class="text-lg text-yellow-300" id="korean-week-subtitle">Korean Week</div>
+                  </div>
                  
                  <!-- Korean Cultural Icons -->
                  <div class="flex justify-center space-x-6 mb-4">
@@ -71,68 +80,69 @@
                      <div class="text-yellow-400 text-2xl">🎭</div>
                  </div>
              </div>
-                         <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 md:mb-6 tracking-tight px-2">
-                 Korea Week Registration
-             </h1>
-             <div class="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 md:mb-8 leading-relaxed max-w-3xl mx-auto px-4">
-                 <p class="mb-3 md:mb-4">
-                     Join us for an exciting celebration of Korean culture at Tishk International University! 
-                     Experience traditional activities, modern entertainment, and authentic Korean cuisine.
-                 </p>
-                 <p>
-                     From kimbap-making to Taekwondo demonstrations, Squid Game challenges to Korean beauty sessions - 
-                     there's something for everyone to enjoy and learn about Korean culture.
-                 </p>
-             </div>
+                                                   <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 md:mb-6 tracking-tight px-2" id="hero-title">
+                  Korea Week Registration
+              </h1>
+              <div class="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 md:mb-8 leading-relaxed max-w-3xl mx-auto px-4">
+                  <p class="mb-3 md:mb-4" id="hero-desc-1">
+                      Join us for an exciting celebration of Korean culture at Tishk International University! 
+                      Experience traditional activities, modern entertainment, and authentic Korean cuisine.
+                  </p>
+                  <p id="hero-desc-2">
+                      From kimbap-making to Taekwondo demonstrations, Squid Game challenges to Korean beauty sessions - 
+                      there's something for everyone to enjoy and learn about Korean culture.
+                  </p>
+              </div>
             
-                         <!-- Event Details -->
-             <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-2xl p-4 md:p-6 mb-6 md:mb-8 max-w-2xl mx-auto mx-4">
-                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 text-center">
-                     <div class="p-2">
-                         <div class="text-xs md:text-sm font-semibold text-gray-200 uppercase tracking-wide">Date</div>
-                         <div class="text-base md:text-lg font-bold">August 29–30</div>
-                     </div>
-                     <div class="p-2">
-                         <div class="text-xs md:text-sm font-semibold text-gray-200 uppercase tracking-wide">Time</div>
-                         <div class="text-base md:text-lg font-bold">2:00 PM</div>
-                     </div>
-                     <div class="p-2">
-                         <div class="text-xs md:text-sm font-semibold text-gray-200 uppercase tracking-wide">Location</div>
-                         <div class="text-base md:text-lg font-bold">Korea Corner</div>
-                         <div class="text-xs md:text-sm">Tishk International University</div>
-                     </div>
-                 </div>
-                 <div class="mt-3 md:mt-4 p-2 md:p-3 bg-yellow-500 bg-opacity-20 rounded-lg">
-                     <p class="text-xs md:text-sm font-medium leading-relaxed">
-                         ⚠️ Participation may be limited by lottery due to space constraints and you can participate for one day only. 
-                         Participants must be 16 years or older.
-                     </p>
-                 </div>
-             </div>
+                                       <!-- Event Details -->
+              <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-2xl p-4 md:p-6 mb-6 md:mb-8 max-w-2xl mx-auto mx-4">
+                  <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 text-center">
+                      <div class="p-2">
+                          <div class="text-xs md:text-sm font-semibold text-gray-200 uppercase tracking-wide" id="date-label">Date</div>
+                          <div class="text-base md:text-lg font-bold">August 29–30</div>
+                      </div>
+                      <div class="p-2">
+                          <div class="text-xs md:text-sm font-semibold text-gray-200 uppercase tracking-wide" id="time-label">Time</div>
+                          <div class="text-base md:text-lg font-bold">2:00 PM</div>
+                      </div>
+                      <div class="p-2">
+                          <div class="text-xs md:text-sm font-semibold text-gray-200 uppercase tracking-wide" id="location-label">Location</div>
+                          <div class="text-base md:text-lg font-bold" id="korea-corner">Korea Corner</div>
+                          <div class="text-xs md:text-sm" id="tishk-university">Tishk International University</div>
+                      </div>
+                  </div>
+                  <div class="mt-3 md:mt-4 p-2 md:p-3 bg-yellow-500 bg-opacity-20 rounded-lg">
+                      <p class="text-xs md:text-sm font-medium leading-relaxed" id="warning-text">
+                          ⚠️ Participation may be limited by lottery due to space constraints and you can participate for one day only. 
+                          Participants must be 16 years or older.
+                      </p>
+                  </div>
+              </div>
             
-                         <button 
-                 onclick="document.getElementById('registration-form').scrollIntoView({behavior: 'smooth'})"
-                 class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 md:py-4 px-6 md:px-8 rounded-full text-base md:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg mx-4"
-             >
-                 Register Now
-             </button>
+                                                   <button 
+                  onclick="document.getElementById('registration-form').scrollIntoView({behavior: 'smooth'})"
+                  class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 md:py-4 px-6 md:px-8 rounded-full text-base md:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg mx-4"
+                  id="register-btn"
+              >
+                  Register Now
+              </button>
         </div>
     </section>
 
          <!-- Registration Form -->
      <section id="registration-form" class="py-8 md:py-16 px-4">
          <div class="max-w-3xl mx-auto">
-                         <!-- Korean Cultural Header -->
-             <div class="text-center mb-6 md:mb-8">
-                 <div class="flex justify-center space-x-2 md:space-x-4 mb-3 md:mb-4">
-                     <div class="text-red-600 text-xl md:text-2xl">🇰🇷</div>
-                     <div class="text-red-600 text-xl md:text-2xl">🎎</div>
-                     <div class="text-red-600 text-xl md:text-2xl">🍜</div>
-                     <div class="text-red-600 text-xl md:text-2xl">🥋</div>
-                 </div>
-                 <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">한국 주간 등록</h2>
-                 <p class="text-sm md:text-base text-gray-600">Korean Week Registration</p>
-             </div>
+                                       <!-- Korean Cultural Header -->
+              <div class="text-center mb-6 md:mb-8">
+                  <div class="flex justify-center space-x-2 md:space-x-4 mb-3 md:mb-4">
+                      <div class="text-red-600 text-xl md:text-2xl">🇰🇷</div>
+                      <div class="text-red-600 text-xl md:text-2xl">🎎</div>
+                      <div class="text-red-600 text-xl md:text-2xl">🍜</div>
+                      <div class="text-red-600 text-xl md:text-2xl">🥋</div>
+                  </div>
+                  <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2" id="form-title">한국 주간 등록</h2>
+                  <p class="text-sm md:text-base text-gray-600" id="form-subtitle">Korean Week Registration</p>
+              </div>
              
              <!-- Progress Stepper -->
              <div class="mb-8 md:mb-12">
@@ -246,9 +256,364 @@
         </div>
     </div>
 
-    <script>
-        // Capacity configuration
-        const capacityConfig = {
+         <script>
+         // Language configuration
+         const languages = {
+             en: {
+                 // Hero Section
+                 koreanWeek: "Korean Week",
+                 koreanWeekRegistration: "Korea Week Registration",
+                 welcome: "Welcome!",
+                 heroDescription1: "Join us for an exciting celebration of Korean culture at Tishk International University! Experience traditional activities, modern entertainment, and authentic Korean cuisine.",
+                 heroDescription2: "From kimbap-making to Taekwondo demonstrations, Squid Game challenges to Korean beauty sessions - there's something for everyone to enjoy and learn about Korean culture.",
+                 date: "Date",
+                 time: "Time",
+                 location: "Location",
+                 koreaCorner: "Korea Corner",
+                 tishkUniversity: "Tishk International University",
+                 warning: "⚠️ Participation may be limited by lottery due to space constraints and you can participate for one day only. Participants must be 16 years or older.",
+                 registerNow: "Register Now",
+                 
+                 // Form Headers
+                 personalInformation: "Personal Information",
+                 personalInfoDesc: "Please provide your basic details to get started",
+                 chooseYourDay: "Choose Your Day",
+                 chooseDayDesc: "Select which day you'd like to attend Korea Week",
+                 activitySelection: "Activity Selection",
+                 activityDesc: "Choose which activities you'd like to join on",
+                 additionalDetails: "Additional Details",
+                 additionalDetailsDesc: "Help us prepare for your visit",
+                 reviewRegistration: "Review Your Registration",
+                 reviewDesc: "Please review your information before submitting",
+                 
+                 // Form Fields
+                 fullName: "Full Name",
+                 age: "Age",
+                 emailAddress: "Email Address",
+                 phoneNumber: "Phone Number",
+                 cityArea: "City/Area",
+                 enterFullName: "Enter your full name",
+                 enterAge: "Enter your age",
+                 enterEmail: "Enter your email address",
+                 enterPhone: "Enter your phone number",
+                 enterCity: "Enter your city or area (optional)",
+                 mustBe16: "Must be 16+",
+                 
+                 // Day Selection
+                 day1: "Day 1 — August 29",
+                 day1Desc: "Experience traditional Korean activities and cultural workshops",
+                 day2: "Day 2 — August 30",
+                 day2Desc: "Modern Korean entertainment and interactive challenges",
+                 
+                 // Activities
+                 kimbapMaking: "Kimbap-making class",
+                 kimbapDesc: "Learn to make traditional Korean rice rolls",
+                 taekwondo: "Taekwondo",
+                 taekwondoDesc: "Experience Korean martial arts",
+                 koreanMakeup: "Korean make-up session",
+                 makeupDesc: "Learn Korean beauty techniques",
+                 squidGame: "Squid Game challenge",
+                 squidDesc: "Fun games inspired by the popular series",
+                 
+                 // Additional Details
+                 dietaryRestrictions: "Dietary Restrictions & Allergies",
+                 dietaryPlaceholder: "Do you have any dietary restrictions and/or allergies? (optional)",
+                 emergencyContact: "Emergency Contact",
+                 emergencyName: "Name",
+                 emergencyPhone: "Phone Number",
+                 relationship: "Relationship",
+                 emergencyNamePlaceholder: "Emergency contact name",
+                 emergencyPhonePlaceholder: "Emergency contact phone",
+                 relationshipPlaceholder: "e.g., Parent, Spouse, Friend",
+                 
+                 // Media Consent
+                 mediaConsent: "Media Consent",
+                 mediaConsentDesc: "Do you give permission for photos and videos taken during Korea Week to be used for promotional purposes?",
+                 yes: "Yes",
+                 no: "No",
+                 
+                 // Waiver
+                 waiverAgreement: "Waiver & Agreement",
+                 waiverText: "By submitting this form, I confirm that I am 16 years or older, and I understand that some activities may involve physical movement or food handling. I agree to follow safety guidelines provided by the organizers.",
+                 iAgree: "I agree",
+                 
+                 // Comments
+                 additionalComments: "Additional Comments",
+                 commentsPlaceholder: "Anything else you'd like us to know? (optional)",
+                 
+                 // Buttons
+                 back: "Back",
+                 next: "Next",
+                 nextDaySelection: "Next: Day Selection",
+                 nextActivities: "Next: Activities",
+                 nextDetails: "Next: Details",
+                 reviewSubmit: "Review & Submit",
+                 joinKoreaWeek: "Join Korea Week!",
+                 close: "Close",
+                 
+                 // Review Section
+                 personalInfo: "Personal Information",
+                 eventDetails: "Event Details",
+                 day: "Day",
+                 activities: "Activities",
+                 notProvided: "Not provided",
+                 notSelected: "Not selected",
+                 
+                 // Success Modal
+                 registrationSuccessful: "Registration Successful!",
+                 successMessage: "Thank you for registering for Korea Week! We've received your application and will send you a confirmation email shortly.",
+                 importantScreenshot: "Important: Take a Screenshot!",
+                 screenshotDesc: "Please take a screenshot of this confirmation screen. You'll need to show this screenshot when you arrive at the event to verify your registration.",
+                 limitedSpots: "Spots are limited and confirmations will be sent via email. Please check your inbox for further details.",
+                 
+                 // Validation Messages
+                 fullNameRequired: "Full name is required",
+                 ageRequired: "Participants must be 16 or older",
+                 validEmail: "Please enter a valid email address",
+                 phoneRequired: "Phone number is required",
+                 selectDay: "Please select a day to continue",
+                 selectActivity: "Please select at least one activity",
+                 fillRequired: "Please fill in all required fields"
+             },
+             ku: {
+                 // Hero Section
+                 koreanWeek: "هەفتەی کۆریا",
+                 koreanWeekRegistration: "تۆمارکردنی هەفتەی کۆریا",
+                 welcome: "بەخێربێیت!",
+                 heroDescription1: "پێکەوە بەشداری لە ئاهەنگێکی سەرنجڕاکێشی کەلتوری کۆریا لە زانکۆی نێودەوڵەتی تیشک بکە! چێژ لە چالاکییە نەریتییەکان، ڕابواردنی مۆدێرن و خۆراکی ڕەسەنی کۆریا وەربگرە.",
+                 heroDescription2: "لە دروستکردنی کیمباپ تا دەرکەوتنی تایکۆندۆ، بەرەنگاربوونەوەی یاری هەشتەکە تا دانیشتنەکانی جوانکاری کۆریا - شتێک هەیە بۆ هەموو کەسێک بۆ چێژ وەرگرتن و فێربوونی کەلتوری کۆریا.",
+                 date: "بەروار",
+                 time: "کاتی",
+                 location: "شوێن",
+                 koreaCorner: "گۆشەی کۆریا",
+                 tishkUniversity: "زانکۆی نێودەوڵەتی تیشک",
+                 warning: "⚠️ بەشداری لەوانەیە بە یانسی بەربەست بێت بەهۆی سنووداری بۆشایی و تۆ تەنها دەتوانیت بۆ یەک ڕۆژ بەشداری بکەیت. بەشداریکەرەکان دەبێت ١٦ ساڵ یان زیاتر بن.",
+                 registerNow: "ئێستا تۆمار بکە",
+                 
+                 // Form Headers
+                 personalInformation: "زانیاری کەسی",
+                 personalInfoDesc: "تکایە زانیارییە سەرەکییەکانت بدە بۆ دەستپێکردن",
+                 chooseYourDay: "ڕۆژەکەت هەڵبژێرە",
+                 chooseDayDesc: "هەڵبژێرە کە کام ڕۆژ دەتەوێت لە هەفتەی کۆریا بەشداری بکەیت",
+                 activitySelection: "هەڵبژاردنی چالاکی",
+                 activityDesc: "هەڵبژێرە کام چالاکییەکان دەتەوێت لە",
+                 additionalDetails: "وردەکاری زیاتر",
+                 additionalDetailsDesc: "یارمەتیمان بدە بۆ ئامادەکردنی سەردانەکەت",
+                 reviewRegistration: "پوختەی تۆمارکردنەکەت",
+                 reviewDesc: "تکایە زانیارییەکانت پوختە بکە پێش ناردن",
+                 
+                 // Form Fields
+                 fullName: "ناوی تەواو",
+                 age: "تەمەن",
+                 emailAddress: "ناونیشانی ئیمەیڵ",
+                 phoneNumber: "ژمارەی مۆبایل",
+                 cityArea: "شار/ناوچە",
+                 enterFullName: "ناوی تەواوەکەت بنووسە",
+                 enterAge: "تەمەنەکەت بنووسە",
+                 enterEmail: "ناونیشانی ئیمەیڵەکەت بنووسە",
+                 enterPhone: "ژمارەی مۆبایلەکەت بنووسە",
+                 enterCity: "شار یان ناوچەکەت بنووسە (دەستخۆ)",
+                 mustBe16: "دەبێت ١٦+ بێت",
+                 
+                 // Day Selection
+                 day1: "ڕۆژی ١ — ٢٩ی ئاب",
+                 day1Desc: "چێژ لە چالاکییە نەریتییەکانی کۆریا و کارگەی کەلتوری وەربگرە",
+                 day2: "ڕۆژی ٢ — ٣٠ی ئاب",
+                 day2Desc: "ڕابواردنی مۆدێرنی کۆریا و بەرەنگاربوونەوەی یەکگرتوو",
+                 
+                 // Activities
+                 kimbapMaking: "پۆلی دروستکردنی کیمباپ",
+                 kimbapDesc: "فێربە چۆن کیمباپی نەریتی دروست بکەیت",
+                 taekwondo: "تایکۆندۆ",
+                 taekwondoDesc: "چێژ لە هونەری جەنگی کۆریا وەربگرە",
+                 koreanMakeup: "دانیشتنی جوانکاری کۆریا",
+                 makeupDesc: "فێربە تەکنیکەکانی جوانکاری کۆریا",
+                 squidGame: "بەرەنگاربوونەوەی یاری هەشتەکە",
+                 squidDesc: "یارییە خۆشەکان کە لە زنجیرە بەناوبانگەکەوە وەرگیراون",
+                 
+                 // Additional Details
+                 dietaryRestrictions: "سنووداری خۆراک و ئەلەرژیا",
+                 dietaryPlaceholder: "هیچ سنووداری خۆراک یان ئەلەرژیا هەتە؟ (دەستخۆ)",
+                 emergencyContact: "پەیوەندی فریاگوزاری",
+                 emergencyName: "ناو",
+                 emergencyPhone: "ژمارەی مۆبایل",
+                 relationship: "پەیوەندی",
+                 emergencyNamePlaceholder: "ناوی پەیوەندی فریاگوزاری",
+                 emergencyPhonePlaceholder: "ژمارەی مۆبایلی پەیوەندی فریاگوزاری",
+                 relationshipPlaceholder: "وەک، باوک، هاوسەر، هاوڕێ",
+                 
+                 // Media Consent
+                 mediaConsent: "ڕازیبوون لە میدیا",
+                 mediaConsentDesc: "ڕازیت لە وێنە و ڤیدیۆیەکانی وەرگیراو لە هەفتەی کۆریا بۆ مەبەستی پڕۆمۆشن بەکاربهێنرێت؟",
+                 yes: "بەڵێ",
+                 no: "نەخێر",
+                 
+                 // Waiver
+                 waiverAgreement: "ڕازیبوون و ڕێکەوتن",
+                 waiverText: "بە ناردنی ئەم فۆرمە، پشتڕاست دەکەمەوە کە ١٦ ساڵ یان زیاتر، و تێدەگەم کە هەندێک چالاکی لەوانەیە بەرپرس لە جووڵەی جەستەیی یان مامەڵەکردن لەگەڵ خۆراک بێت. ڕازیم لە شوێنکەوتنی ڕێنمایییەکانی پارێزگاری دەستەبەرکراو لەلایەن ڕێکخەرەکانەوە.",
+                 iAgree: "ڕازیم",
+                 
+                 // Comments
+                 additionalComments: "لێدوانی زیاتر",
+                 commentsPlaceholder: "هیچ شتێکی تر هەیە کە دەتەوێت ئێمە بەزانین؟ (دەستخۆ)",
+                 
+                 // Buttons
+                 back: "گەڕانەوە",
+                 next: "دواتر",
+                 nextDaySelection: "دواتر: هەڵبژاردنی ڕۆژ",
+                 nextActivities: "دواتر: چالاکییەکان",
+                 nextDetails: "دواتر: وردەکاری",
+                 reviewSubmit: "پوختە و ناردن",
+                 joinKoreaWeek: "بەشداری هەفتەی کۆریا بکە!",
+                 close: "داخستن",
+                 
+                 // Review Section
+                 personalInfo: "زانیاری کەسی",
+                 eventDetails: "وردەکاری ڕووداو",
+                 day: "ڕۆژ",
+                 activities: "چالاکییەکان",
+                 notProvided: "نەدراوە",
+                 notSelected: "هەڵنەبژێردراوە",
+                 
+                 // Success Modal
+                 registrationSuccessful: "تۆمارکردن سەرکەوتوو بوو!",
+                 successMessage: "سوپاس بۆ تۆمارکردنت لە هەفتەی کۆریا! ئەرکی تۆمارکردنەکەت وەرگرتووە و بەم زووانە ئیمەیڵێکی پشتڕاستکردنەوەت دەنێرین.",
+                 importantScreenshot: "گرنگ: وێنەی شاشە بکە!",
+                 screenshotDesc: "تکایە وێنەیەکی شاشەکە بکە. پێویستت دەبێت ئەم وێنەیە پیشان بدەیت کاتێک دەگەیت بۆ ڕووداوەکە بۆ پشتڕاستکردنەوەی تۆمارکردنەکەت.",
+                 limitedSpots: "شوێنەکان سنوودارن و پشتڕاستکردنەوەکان بە ئیمەیڵ دەنێردرێن. تکایە صندوقی ناوەڕۆکەکەت بەدوادا بکە بۆ وردەکاری زیاتر.",
+                 
+                 // Validation Messages
+                 fullNameRequired: "ناوی تەواو پێویستە",
+                 ageRequired: "بەشداریکەرەکان دەبێت ١٦ یان زیاتر بن",
+                 validEmail: "تکایە ناونیشانی ئیمەیڵێکی دروست بنووسە",
+                 phoneRequired: "ژمارەی مۆبایل پێویستە",
+                 selectDay: "تکایە ڕۆژێک هەڵبژێرە بۆ بەردەوامبوون",
+                 selectActivity: "تکایە لانیکەم یەک چالاکی هەڵبژێرە",
+                 fillRequired: "تکایە هەموو خانە پێویستەکان پڕبکەرەوە"
+             },
+             ko: {
+                 // Hero Section
+                 koreanWeek: "한국 주간",
+                 koreanWeekRegistration: "한국 주간 등록",
+                 welcome: "환영합니다!",
+                 heroDescription1: "티슈크 국제대학교에서 열리는 흥미진진한 한국 문화 축제에 참여하세요! 전통 활동, 현대 엔터테인먼트, 진정한 한국 요리를 경험해보세요.",
+                 heroDescription2: "김밥 만들기부터 태권도 시연, 오징어 게임 챌린지부터 한국 뷰티 세션까지 - 한국 문화를 즐기고 배울 수 있는 모든 것이 있습니다.",
+                 date: "날짜",
+                 time: "시간",
+                 location: "장소",
+                 koreaCorner: "코리아 코너",
+                 tishkUniversity: "티슈크 국제대학교",
+                 warning: "⚠️ 공간 제약으로 인해 추첨을 통해 참가가 제한될 수 있으며 하루만 참가할 수 있습니다. 참가자는 16세 이상이어야 합니다.",
+                 registerNow: "지금 등록하기",
+                 
+                 // Form Headers
+                 personalInformation: "개인 정보",
+                 personalInfoDesc: "시작하려면 기본 정보를 제공해 주세요",
+                 chooseYourDay: "날짜 선택",
+                 chooseDayDesc: "한국 주간에 참석하고 싶은 날을 선택하세요",
+                 activitySelection: "활동 선택",
+                 activityDesc: "참여하고 싶은 활동을 선택하세요",
+                 additionalDetails: "추가 세부사항",
+                 additionalDetailsDesc: "방문 준비를 도와주세요",
+                 reviewRegistration: "등록 검토",
+                 reviewDesc: "제출하기 전에 정보를 검토해 주세요",
+                 
+                 // Form Fields
+                 fullName: "전체 이름",
+                 age: "나이",
+                 emailAddress: "이메일 주소",
+                 phoneNumber: "전화번호",
+                 cityArea: "도시/지역",
+                 enterFullName: "전체 이름을 입력하세요",
+                 enterAge: "나이를 입력하세요",
+                 enterEmail: "이메일 주소를 입력하세요",
+                 enterPhone: "전화번호를 입력하세요",
+                 enterCity: "도시 또는 지역을 입력하세요 (선택사항)",
+                 mustBe16: "16세 이상이어야 합니다",
+                 
+                 // Day Selection
+                 day1: "1일차 — 8월 29일",
+                 day1Desc: "전통적인 한국 활동과 문화 워크샵을 경험하세요",
+                 day2: "2일차 — 8월 30일",
+                 day2Desc: "현대적인 한국 엔터테인먼트와 인터랙티브 챌린지",
+                 
+                 // Activities
+                 kimbapMaking: "김밥 만들기 수업",
+                 kimbapDesc: "전통적인 한국 김밥 만드는 법을 배우세요",
+                 taekwondo: "태권도",
+                 taekwondoDesc: "한국 무술을 경험하세요",
+                 koreanMakeup: "한국 메이크업 세션",
+                 makeupDesc: "한국 뷰티 기법을 배우세요",
+                 squidGame: "오징어 게임 챌린지",
+                 squidDesc: "인기 시리즈에서 영감을 받은 재미있는 게임들",
+                 
+                 // Additional Details
+                 dietaryRestrictions: "식이 제한 및 알레르기",
+                 dietaryPlaceholder: "식이 제한이나 알레르기가 있으신가요? (선택사항)",
+                 emergencyContact: "비상 연락처",
+                 emergencyName: "이름",
+                 emergencyPhone: "전화번호",
+                 relationship: "관계",
+                 emergencyNamePlaceholder: "비상 연락처 이름",
+                 emergencyPhonePlaceholder: "비상 연락처 전화번호",
+                 relationshipPlaceholder: "예: 부모, 배우자, 친구",
+                 
+                 // Media Consent
+                 mediaConsent: "미디어 동의",
+                 mediaConsentDesc: "한국 주간 중 촬영된 사진과 비디오를 홍보 목적으로 사용하는 것에 동의하시나요?",
+                 yes: "예",
+                 no: "아니오",
+                 
+                 // Waiver
+                 waiverAgreement: "면책 및 동의",
+                 waiverText: "이 양식을 제출함으로써 저는 16세 이상임을 확인하며, 일부 활동에는 신체적 움직임이나 식품 취급이 포함될 수 있음을 이해합니다. 주최자가 제공하는 안전 지침을 따르는 것에 동의합니다.",
+                 iAgree: "동의합니다",
+                 
+                 // Comments
+                 additionalComments: "추가 의견",
+                 commentsPlaceholder: "알려주고 싶은 다른 것이 있으신가요? (선택사항)",
+                 
+                 // Buttons
+                 back: "뒤로",
+                 next: "다음",
+                 nextDaySelection: "다음: 날짜 선택",
+                 nextActivities: "다음: 활동",
+                 nextDetails: "다음: 세부사항",
+                 reviewSubmit: "검토 및 제출",
+                 joinKoreaWeek: "한국 주간에 참여하세요!",
+                 close: "닫기",
+                 
+                 // Review Section
+                 personalInfo: "개인 정보",
+                 eventDetails: "이벤트 세부사항",
+                 day: "날짜",
+                 activities: "활동",
+                 notProvided: "제공되지 않음",
+                 notSelected: "선택되지 않음",
+                 
+                 // Success Modal
+                 registrationSuccessful: "등록 성공!",
+                 successMessage: "한국 주간에 등록해 주셔서 감사합니다! 신청서를 받았으며 곧 확인 이메일을 보내드리겠습니다.",
+                 importantScreenshot: "중요: 스크린샷을 찍으세요!",
+                 screenshotDesc: "이 확인 화면의 스크린샷을 찍어주세요. 이벤트에 도착했을 때 등록을 확인하기 위해 이 스크린샷을 보여주셔야 합니다.",
+                 limitedSpots: "자리가 제한되어 있으며 확인은 이메일로 발송됩니다. 자세한 내용은 받은 편지함을 확인해 주세요.",
+                 
+                 // Validation Messages
+                 fullNameRequired: "전체 이름이 필요합니다",
+                 ageRequired: "참가자는 16세 이상이어야 합니다",
+                 validEmail: "유효한 이메일 주소를 입력해 주세요",
+                 phoneRequired: "전화번호가 필요합니다",
+                 selectDay: "계속하려면 날짜를 선택해 주세요",
+                 selectActivity: "최소 하나의 활동을 선택해 주세요",
+                 fillRequired: "모든 필수 필드를 작성해 주세요"
+             }
+         };
+         
+         // Current language
+         let currentLanguage = 'en';
+         
+         // Capacity configuration
+         const capacityConfig = {
             "day1": {
                 "kimbap": 30,
                 "taekwondo": 25,
@@ -268,10 +633,72 @@
         let formData = {};
         let selectedDay = null;
 
-        // Initialize form
-        document.addEventListener('DOMContentLoaded', function() {
-            loadFormSection(1);
-        });
+                 // Initialize form
+         document.addEventListener('DOMContentLoaded', function() {
+             loadFormSection(1);
+             updateLanguageUI();
+         });
+         
+         // Language change function
+         function changeLanguage(lang) {
+             currentLanguage = lang;
+             updateLanguageUI();
+             updateAllText();
+             
+             // Reload current form section to update text
+             if (currentStep >= 1 && currentStep <= 5) {
+                 loadFormSection(currentStep);
+             }
+         }
+         
+         // Update language switcher UI
+         function updateLanguageUI() {
+             const langButtons = document.querySelectorAll('.language-btn');
+             langButtons.forEach(btn => {
+                 btn.classList.remove('bg-opacity-20');
+                 btn.classList.add('bg-opacity-10');
+             });
+             
+             const activeBtn = document.getElementById(`lang-${currentLanguage}`);
+             if (activeBtn) {
+                 activeBtn.classList.remove('bg-opacity-10');
+                 activeBtn.classList.add('bg-opacity-20');
+             }
+         }
+         
+         // Update all static text on the page
+         function updateAllText() {
+             // Hero section
+             const koreanWeekText = document.getElementById('korean-week-text');
+             const koreanWeekSubtitle = document.getElementById('korean-week-subtitle');
+             const heroTitle = document.getElementById('hero-title');
+             const heroDesc1 = document.getElementById('hero-desc-1');
+             const heroDesc2 = document.getElementById('hero-desc-2');
+             const dateLabel = document.getElementById('date-label');
+             const timeLabel = document.getElementById('time-label');
+             const locationLabel = document.getElementById('location-label');
+             const koreaCorner = document.getElementById('korea-corner');
+             const tishkUniversity = document.getElementById('tishk-university');
+             const warningText = document.getElementById('warning-text');
+             const registerBtn = document.getElementById('register-btn');
+             const formTitle = document.getElementById('form-title');
+             const formSubtitle = document.getElementById('form-subtitle');
+             
+             if (koreanWeekText) koreanWeekText.textContent = languages[currentLanguage].koreanWeek;
+             if (koreanWeekSubtitle) koreanWeekSubtitle.textContent = languages[currentLanguage].koreanWeekRegistration;
+             if (heroTitle) heroTitle.textContent = languages[currentLanguage].koreanWeekRegistration;
+             if (heroDesc1) heroDesc1.textContent = languages[currentLanguage].heroDescription1;
+             if (heroDesc2) heroDesc2.textContent = languages[currentLanguage].heroDescription2;
+             if (dateLabel) dateLabel.textContent = languages[currentLanguage].date;
+             if (timeLabel) timeLabel.textContent = languages[currentLanguage].time;
+             if (locationLabel) locationLabel.textContent = languages[currentLanguage].location;
+             if (koreaCorner) koreaCorner.textContent = languages[currentLanguage].koreaCorner;
+             if (tishkUniversity) tishkUniversity.textContent = languages[currentLanguage].tishkUniversity;
+             if (warningText) warningText.textContent = languages[currentLanguage].warning;
+             if (registerBtn) registerBtn.textContent = languages[currentLanguage].registerNow;
+             if (formTitle) formTitle.textContent = languages[currentLanguage].koreanWeekRegistration;
+             if (formSubtitle) formSubtitle.textContent = languages[currentLanguage].koreanWeekRegistration;
+         }
 
         function loadFormSection(step) {
             const formContent = document.getElementById('form-content');
@@ -359,22 +786,22 @@
         }
 
         // Form Section Functions
-        function getPersonalInfoSection() {
-            return `
-                <div class="space-y-6">
-                                         <div class="text-center mb-8">
-                         <div class="flex justify-center space-x-3 mb-4">
-                             <div class="text-red-600 text-xl">👤</div>
-                             <div class="text-red-600 text-xl">🇰🇷</div>
-                         </div>
-                         <h2 class="text-3xl font-bold text-gray-900 mb-2">Personal Information</h2>
-                         <p class="text-gray-600">Please provide your basic details to get started</p>
-                     </div>
+                 function getPersonalInfoSection() {
+             return `
+                 <div class="space-y-6">
+                                          <div class="text-center mb-8">
+                          <div class="flex justify-center space-x-3 mb-4">
+                              <div class="text-red-600 text-xl">👤</div>
+                              <div class="text-red-600 text-xl">🇰🇷</div>
+                          </div>
+                          <h2 class="text-3xl font-bold text-gray-900 mb-2">${languages[currentLanguage].personalInformation}</h2>
+                          <p class="text-gray-600">${languages[currentLanguage].personalInfoDesc}</p>
+                      </div>
                     
                                          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                          <div>
                              <label for="fullName" class="block text-sm font-medium text-gray-700 mb-2">
-                                 Full Name <span class="text-red-500">*</span>
+                                 ${languages[currentLanguage].fullName} <span class="text-red-500">*</span>
                              </label>
                              <input 
                                  type="text" 
@@ -382,71 +809,71 @@
                                  name="fullName" 
                                  required 
                                  class="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors text-base"
-                                 placeholder="Enter your full name"
+                                 placeholder="${languages[currentLanguage].enterFullName}"
                              >
                              <div id="fullName-error" class="hidden text-red-500 text-sm mt-1"></div>
                          </div>
                         
-                        <div>
-                            <label for="age" class="block text-sm font-medium text-gray-700 mb-2">
-                                Age <span class="text-red-500">*</span>
-                            </label>
-                                                         <input 
-                                 type="number" 
-                                 id="age" 
-                                 name="age" 
-                                 required 
-                                 min="16" 
-                                 max="120"
-                                 class="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors text-base"
-                                 placeholder="Enter your age"
-                             >
-                            <div class="text-sm text-gray-500 mt-1">Must be 16+</div>
-                            <div id="age-error" class="hidden text-red-500 text-sm mt-1"></div>
-                        </div>
+                                                 <div>
+                             <label for="age" class="block text-sm font-medium text-gray-700 mb-2">
+                                 ${languages[currentLanguage].age} <span class="text-red-500">*</span>
+                             </label>
+                                                          <input 
+                                  type="number" 
+                                  id="age" 
+                                  name="age" 
+                                  required 
+                                  min="16" 
+                                  max="120"
+                                  class="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors text-base"
+                                  placeholder="${languages[currentLanguage].enterAge}"
+                              >
+                             <div class="text-sm text-gray-500 mt-1">${languages[currentLanguage].mustBe16}</div>
+                             <div id="age-error" class="hidden text-red-500 text-sm mt-1"></div>
+                         </div>
                         
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
-                                Email Address <span class="text-red-500">*</span>
-                            </label>
-                                                         <input 
-                                 type="email" 
-                                 id="email" 
-                                 name="email" 
-                                 required 
-                                 class="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors text-base"
-                                 placeholder="Enter your email address"
-                             >
-                            <div id="email-error" class="hidden text-red-500 text-sm mt-1"></div>
-                        </div>
+                                                 <div>
+                             <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                                 ${languages[currentLanguage].emailAddress} <span class="text-red-500">*</span>
+                             </label>
+                                                          <input 
+                                  type="email" 
+                                  id="email" 
+                                  name="email" 
+                                  required 
+                                  class="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors text-base"
+                                  placeholder="${languages[currentLanguage].enterEmail}"
+                              >
+                             <div id="email-error" class="hidden text-red-500 text-sm mt-1"></div>
+                         </div>
                         
-                        <div>
-                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">
-                                Phone Number <span class="text-red-500">*</span>
-                            </label>
-                                                         <input 
-                                 type="tel" 
-                                 id="phone" 
-                                 name="phone" 
-                                 required 
-                                 class="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors text-base"
-                                 placeholder="Enter your phone number"
-                             >
-                            <div id="phone-error" class="hidden text-red-500 text-sm mt-1"></div>
-                        </div>
+                                                 <div>
+                             <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">
+                                 ${languages[currentLanguage].phoneNumber} <span class="text-red-500">*</span>
+                             </label>
+                                                          <input 
+                                  type="tel" 
+                                  id="phone" 
+                                  name="phone" 
+                                  required 
+                                  class="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors text-base"
+                                  placeholder="${languages[currentLanguage].enterPhone}"
+                              >
+                             <div id="phone-error" class="hidden text-red-500 text-sm mt-1"></div>
+                         </div>
                         
-                        <div class="md:col-span-2">
-                            <label for="city" class="block text-sm font-medium text-gray-700 mb-2">
-                                City/Area
-                            </label>
-                                                         <input 
-                                 type="text" 
-                                 id="city" 
-                                 name="city" 
-                                 class="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors text-base"
-                                 placeholder="Enter your city or area (optional)"
-                             >
-                        </div>
+                                                 <div class="md:col-span-2">
+                             <label for="city" class="block text-sm font-medium text-gray-700 mb-2">
+                                 ${languages[currentLanguage].cityArea}
+                             </label>
+                                                          <input 
+                                  type="text" 
+                                  id="city" 
+                                  name="city" 
+                                  class="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors text-base"
+                                  placeholder="${languages[currentLanguage].enterCity}"
+                              >
+                         </div>
                     </div>
                     
                                          <div class="flex justify-end pt-4 md:pt-6">
@@ -455,7 +882,7 @@
                              onclick="validateAndSavePersonalInfo()"
                              class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 md:py-3 px-6 md:px-8 rounded-lg transition-colors text-sm md:text-base"
                          >
-                             Next: Day Selection
+                             ${languages[currentLanguage].nextDaySelection}
                          </button>
                      </div>
                 </div>
@@ -860,25 +1287,25 @@
             // Clear previous errors
             document.querySelectorAll('[id$="-error"]').forEach(el => el.classList.add('hidden'));
             
-            if (!fullName) {
-                showFieldError('fullName', 'Full name is required');
-                isValid = false;
-            }
-            
-            if (!age || age < 16) {
-                showFieldError('age', 'Participants must be 16 or older');
-                isValid = false;
-            }
-            
-            if (!email || !isValidEmail(email)) {
-                showFieldError('email', 'Please enter a valid email address');
-                isValid = false;
-            }
-            
-            if (!phone) {
-                showFieldError('phone', 'Phone number is required');
-                isValid = false;
-            }
+                         if (!fullName) {
+                 showFieldError('fullName', languages[currentLanguage].fullNameRequired);
+                 isValid = false;
+             }
+             
+             if (!age || age < 16) {
+                 showFieldError('age', languages[currentLanguage].ageRequired);
+                 isValid = false;
+             }
+             
+             if (!email || !isValidEmail(email)) {
+                 showFieldError('email', languages[currentLanguage].validEmail);
+                 isValid = false;
+             }
+             
+             if (!phone) {
+                 showFieldError('phone', languages[currentLanguage].phoneRequired);
+                 isValid = false;
+             }
             
             if (isValid) {
                 formData = {
@@ -892,53 +1319,53 @@
             }
         }
 
-        function validateAndSaveDaySelection() {
-            const selectedDayRadio = document.querySelector('input[name="selectedDay"]:checked');
-            if (!selectedDayRadio) {
-                alert('Please select a day to continue');
-                return;
-            }
-            
-            selectedDay = selectedDayRadio.value;
-            nextStep();
-        }
+                 function validateAndSaveDaySelection() {
+             const selectedDayRadio = document.querySelector('input[name="selectedDay"]:checked');
+             if (!selectedDayRadio) {
+                 alert(languages[currentLanguage].selectDay);
+                 return;
+             }
+             
+             selectedDay = selectedDayRadio.value;
+             nextStep();
+         }
 
-        function validateAndSaveActivities() {
-            const selectedActivities = Array.from(document.querySelectorAll('input[name="activities"]:checked')).map(cb => cb.value);
-            if (selectedActivities.length === 0) {
-                alert('Please select at least one activity');
-                return;
-            }
-            
-            formData.activities = selectedActivities;
-            nextStep();
-        }
+                 function validateAndSaveActivities() {
+             const selectedActivities = Array.from(document.querySelectorAll('input[name="activities"]:checked')).map(cb => cb.value);
+             if (selectedActivities.length === 0) {
+                 alert(languages[currentLanguage].selectActivity);
+                 return;
+             }
+             
+             formData.activities = selectedActivities;
+             nextStep();
+         }
 
-        function validateAndSaveDetails() {
-            const emergencyName = document.getElementById('emergencyName').value.trim();
-            const emergencyPhone = document.getElementById('emergencyPhone').value.trim();
-            const emergencyRelation = document.getElementById('emergencyRelation').value.trim();
-            const mediaConsent = document.querySelector('input[name="mediaConsent"]:checked');
-            const waiverAgreement = document.querySelector('input[name="waiverAgreement"]:checked');
-            const dietary = document.getElementById('dietary').value.trim();
-            const comments = document.getElementById('comments').value.trim();
-            
-            if (!emergencyName || !emergencyPhone || !emergencyRelation || !mediaConsent || !waiverAgreement) {
-                alert('Please fill in all required fields');
-                return;
-            }
-            
-            formData = {
-                ...formData,
-                emergencyName,
-                emergencyPhone,
-                emergencyRelation,
-                mediaConsent: mediaConsent.value,
-                dietary,
-                comments
-            };
-            nextStep();
-        }
+                 function validateAndSaveDetails() {
+             const emergencyName = document.getElementById('emergencyName').value.trim();
+             const emergencyPhone = document.getElementById('emergencyPhone').value.trim();
+             const emergencyRelation = document.getElementById('emergencyRelation').value.trim();
+             const mediaConsent = document.querySelector('input[name="mediaConsent"]:checked');
+             const waiverAgreement = document.querySelector('input[name="waiverAgreement"]:checked');
+             const dietary = document.getElementById('dietary').value.trim();
+             const comments = document.getElementById('comments').value.trim();
+             
+             if (!emergencyName || !emergencyPhone || !emergencyRelation || !mediaConsent || !waiverAgreement) {
+                 alert(languages[currentLanguage].fillRequired);
+                 return;
+             }
+             
+             formData = {
+                 ...formData,
+                 emergencyName,
+                 emergencyPhone,
+                 emergencyRelation,
+                 mediaConsent: mediaConsent.value,
+                 dietary,
+                 comments
+             };
+             nextStep();
+         }
 
         function showFieldError(fieldId, message) {
             const errorEl = document.getElementById(fieldId + '-error');
