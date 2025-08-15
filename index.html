@@ -48,10 +48,30 @@
         
                  <!-- Language Switcher -->
          <div class="absolute top-4 right-4 z-20">
-             <div class="flex space-x-2">
-                 <button onclick="changeLanguage('en')" class="language-btn bg-white bg-opacity-20 hover:bg-opacity-30 text-white px-3 py-1 rounded-lg text-sm font-medium transition-all" id="lang-en">EN</button>
-                 <button onclick="changeLanguage('ku')" class="language-btn bg-white bg-opacity-10 hover:bg-opacity-30 text-white px-3 py-1 rounded-lg text-sm font-medium transition-all" id="lang-ku">کوردی</button>
-                 <button onclick="changeLanguage('ko')" class="language-btn bg-white bg-opacity-10 hover:bg-opacity-30 text-white px-3 py-1 rounded-lg text-sm font-medium transition-all" id="lang-ko">한국어</button>
+             <div class="relative">
+                 <button onclick="toggleLanguageDropdown()" class="bg-white bg-opacity-20 hover:bg-opacity-30 text-white px-3 py-2 rounded-lg text-sm font-medium transition-all flex items-center space-x-2" id="lang-btn">
+                     <span id="current-lang-flag">🇺🇸</span>
+                     <span id="current-lang-text">EN</span>
+                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                     </svg>
+                 </button>
+                 <div id="language-dropdown" class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 hidden z-30">
+                     <div class="py-1">
+                         <button onclick="changeLanguage('en')" class="w-full text-left px-4 py-2 hover:bg-gray-100 flex items-center space-x-3 transition-colors">
+                             <span class="text-lg">🇺🇸</span>
+                             <span class="text-gray-700">English</span>
+                         </button>
+                         <button onclick="changeLanguage('ku')" class="w-full text-left px-4 py-2 hover:bg-gray-100 flex items-center space-x-3 transition-colors">
+                             <span class="text-lg">🇮🇶</span>
+                             <span class="text-gray-700">کوردی</span>
+                         </button>
+                         <button onclick="changeLanguage('ko')" class="w-full text-left px-4 py-2 hover:bg-gray-100 flex items-center space-x-3 transition-colors">
+                             <span class="text-lg">🇰🇷</span>
+                             <span class="text-gray-700">한국어</span>
+                         </button>
+                     </div>
+                 </div>
              </div>
          </div>
          
@@ -111,12 +131,12 @@
                           <div class="text-xs" id="tishk-university">Tishk International University</div>
                       </div>
                   </div>
-                  <div class="mt-2 sm:mt-3 md:mt-4 p-2 sm:p-3 bg-yellow-500 bg-opacity-20 rounded-lg">
-                      <p class="text-xs font-medium leading-relaxed" id="warning-text">
-                          ⚠️ Participation may be limited by lottery due to space constraints and you can participate for one day only. 
-                          Participants must be 16 years or older.
-                      </p>
-                  </div>
+                                     <div class="mt-2 sm:mt-3 md:mt-4 p-2 sm:p-3 bg-yellow-500 bg-opacity-20 rounded-lg">
+                       <p class="text-xs font-medium leading-relaxed" id="warning-text">
+                           ⚠️ Participation may be limited by lottery due to space constraints and you can participate for one day only. 
+                           Participants must be 16 years or older. This form is for one person only. Please do not bring babies or children under 16.
+                       </p>
+                   </div>
               </div>
             
                                                    <button 
@@ -270,7 +290,7 @@
                  location: "Location",
                  koreaCorner: "Korea Corner",
                  tishkUniversity: "Tishk International University",
-                 warning: "⚠️ Participation may be limited by lottery due to space constraints and you can participate for one day only. Participants must be 16 years or older.",
+                                   warning: "⚠️ Participation may be limited by lottery due to space constraints and you can participate for one day only. Participants must be 16 years or older. This form is for one person only. Please do not bring babies or children under 16.",
                  registerNow: "Register Now",
                  
                  // Form Headers
@@ -384,7 +404,7 @@
                  location: "شوێن",
                  koreaCorner: "گۆشەی کۆریا",
                  tishkUniversity: "زانکۆی نێودەوڵەتی تیشک",
-                 warning: "⚠️ بەشداری لەوانەیە بە یانسی بەربەست بێت بەهۆی سنووداری بۆشایی و تۆ تەنها دەتوانیت بۆ یەک ڕۆژ بەشداری بکەیت. بەشداریکەرەکان دەبێت ١٦ ساڵ یان زیاتر بن.",
+                 warning: "⚠️ بەشداری لەوانەیە بە یانسی بەربەست بێت بەهۆی سنووداری بۆشایی و تۆ تەنها دەتوانیت بۆ یەک ڕۆژ بەشداری بکەیت. بەشداریکەرەکان دەبێت ١٦ ساڵ یان زیاتر بن. ئەم فۆرمە بۆ یەک کەسە تەنها. تکایە منداڵ یان کەسانی لە ١٦ ساڵ لە خوارەوە مەهێنە.",
                  registerNow: "ئێستا تۆمار بکە",
                  
                  // Form Headers
@@ -498,7 +518,7 @@
                  location: "장소",
                  koreaCorner: "코리아 코너",
                  tishkUniversity: "티슈크 국제대학교",
-                 warning: "⚠️ 공간 제약으로 인해 추첨을 통해 참가가 제한될 수 있으며 하루만 참가할 수 있습니다. 참가자는 16세 이상이어야 합니다.",
+                 warning: "⚠️ 공간 제약으로 인해 추첨을 통해 참가가 제한될 수 있으며 하루만 참가할 수 있습니다. 참가자는 16세 이상이어야 합니다. 이 양식은 한 명만을 위한 것입니다. 16세 미만의 아기나 어린이를 데려오지 마세요.",
                  registerNow: "지금 등록하기",
                  
                  // Form Headers
@@ -642,19 +662,41 @@
              }
          }
          
+         // Toggle language dropdown
+         function toggleLanguageDropdown() {
+             const dropdown = document.getElementById('language-dropdown');
+             dropdown.classList.toggle('hidden');
+         }
+         
+         // Close dropdown when clicking outside
+         document.addEventListener('click', function(event) {
+             const dropdown = document.getElementById('language-dropdown');
+             const langBtn = document.getElementById('lang-btn');
+             
+             if (!langBtn.contains(event.target) && !dropdown.contains(event.target)) {
+                 dropdown.classList.add('hidden');
+             }
+         });
+         
          // Update language switcher UI
          function updateLanguageUI() {
-             const langButtons = document.querySelectorAll('.language-btn');
-             langButtons.forEach(btn => {
-                 btn.classList.remove('bg-opacity-20');
-                 btn.classList.add('bg-opacity-10');
-             });
+             const currentLangFlag = document.getElementById('current-lang-flag');
+             const currentLangText = document.getElementById('current-lang-text');
              
-             const activeBtn = document.getElementById(`lang-${currentLanguage}`);
-             if (activeBtn) {
-                 activeBtn.classList.remove('bg-opacity-10');
-                 activeBtn.classList.add('bg-opacity-20');
-             }
+             const flagMap = {
+                 'en': '🇺🇸',
+                 'ku': '🇮🇶',
+                 'ko': '🇰🇷'
+             };
+             
+             const textMap = {
+                 'en': 'EN',
+                 'ku': 'کوردی',
+                 'ko': '한국어'
+             };
+             
+             if (currentLangFlag) currentLangFlag.textContent = flagMap[currentLanguage];
+             if (currentLangText) currentLangText.textContent = textMap[currentLanguage];
          }
          
          // Update all static text on the page
