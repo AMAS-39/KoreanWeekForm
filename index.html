@@ -63,7 +63,7 @@
                              <span class="text-gray-700">English</span>
                          </button>
                          <button onclick="changeLanguage('ku')" class="w-full text-left px-4 py-2 hover:bg-gray-100 flex items-center space-x-3 transition-colors">
-                             <span class="text-lg">🌟</span>
+                             <img src="assets/images/Flag_of_Kurdistan.svg.png" alt="Kurdistan Flag" class="w-6 h-4 object-cover rounded">
                              <span class="text-gray-700">کوردی</span>
                          </button>
                          <button onclick="changeLanguage('ko')" class="w-full text-left px-4 py-2 hover:bg-gray-100 flex items-center space-x-3 transition-colors">
@@ -678,26 +678,32 @@
              }
          });
          
-         // Update language switcher UI
-         function updateLanguageUI() {
-             const currentLangFlag = document.getElementById('current-lang-flag');
-             const currentLangText = document.getElementById('current-lang-text');
-             
-             const flagMap = {
-                 'en': '🇺🇸',
-                 'ku': '🌟',
-                 'ko': '🇰🇷'
-             };
-             
-             const textMap = {
-                 'en': 'EN',
-                 'ku': 'کوردی',
-                 'ko': '한국어'
-             };
-             
-             if (currentLangFlag) currentLangFlag.textContent = flagMap[currentLanguage];
-             if (currentLangText) currentLangText.textContent = textMap[currentLanguage];
-         }
+                   // Update language switcher UI
+          function updateLanguageUI() {
+              const currentLangFlag = document.getElementById('current-lang-flag');
+              const currentLangText = document.getElementById('current-lang-text');
+              
+              const flagMap = {
+                  'en': '🇺🇸',
+                  'ku': '<img src="assets/images/Flag_of_Kurdistan.svg.png" alt="Kurdistan Flag" class="w-5 h-3 object-cover rounded">',
+                  'ko': '🇰🇷'
+              };
+              
+              const textMap = {
+                  'en': 'EN',
+                  'ku': 'کوردی',
+                  'ko': '한국어'
+              };
+              
+              if (currentLangFlag) {
+                  if (currentLanguage === 'ku') {
+                      currentLangFlag.innerHTML = flagMap[currentLanguage];
+                  } else {
+                      currentLangFlag.textContent = flagMap[currentLanguage];
+                  }
+              }
+              if (currentLangText) currentLangText.textContent = textMap[currentLanguage];
+          }
          
          // Update all static text on the page
          function updateAllText() {
